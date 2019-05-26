@@ -60,5 +60,47 @@ public class App
             }
         }
 
+
+        Map<Student, List<List<String>>> foodMenu = new HashMap<>();
+
+        Student student1 = new Student("abc", "efg", 1);
+        Student student2 = new Student("abcc", "efgg", 1);
+        Student student3 = new Student("abbc", "effg", 1);
+
+        List<List<String>> dni = new ArrayList<>();
+        List<String> dania = new ArrayList<>();
+
+        dania.add("JAJKA");
+        dania.add("MAKARON");
+        dania.add("RYBA");
+
+        dni.add(dania);  // pon
+
+        List<String> daniaWtorek = new ArrayList<>();
+        daniaWtorek.add("POMIDOROWA");
+        daniaWtorek.add("RYŻ");
+        daniaWtorek.add("KURA");
+
+        dni.add(daniaWtorek);  //wtorek
+
+        foodMenu.put(student1, dni);
+
+        for(Map.Entry<Student, List<List<String>>> mapData: foodMenu.entrySet()){
+
+        Student key = mapData.getKey();
+        List<List<String>> dataList = foodMenu.get(key);
+            System.out.println("Imie: " +key.getName() + " nazwisko: " + key.getLastname());
+                for(List<String> list: dataList){
+            for(String str: list){
+                System.out.println(str);
+            }
+            System.out.println("========");
+        }
+
     }
+
+    }
+
+
+
 }
